@@ -30,6 +30,7 @@
         {
             this.headerLabel = new System.Windows.Forms.Label();
             this.tournamentName = new System.Windows.Forms.Label();
+            this.roundLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -54,12 +55,24 @@
             this.tournamentName.TabIndex = 1;
             this.tournamentName.Text = "<none>";
             // 
+            // roundLabel
+            // 
+            this.roundLabel.AutoSize = true;
+            this.roundLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.roundLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.roundLabel.Location = new System.Drawing.Point(15, 63);
+            this.roundLabel.Name = "roundLabel";
+            this.roundLabel.Size = new System.Drawing.Size(94, 37);
+            this.roundLabel.TabIndex = 2;
+            this.roundLabel.Text = "Round";
+            // 
             // TournamentViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 1038);
+            this.Controls.Add(this.roundLabel);
             this.Controls.Add(this.tournamentName);
             this.Controls.Add(this.headerLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -75,6 +88,7 @@
 
         private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.Label tournamentName;
+        private System.Windows.Forms.Label roundLabel;
     }
 }
 
