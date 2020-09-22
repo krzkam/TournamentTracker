@@ -135,7 +135,7 @@
             // 
             this.teamOneScoreValue.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.teamOneScoreValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.teamOneScoreValue.Location = new System.Drawing.Point(391, 171);
+            this.teamOneScoreValue.Location = new System.Drawing.Point(391, 174);
             this.teamOneScoreValue.Name = "teamOneScoreValue";
             this.teamOneScoreValue.Size = new System.Drawing.Size(100, 35);
             this.teamOneScoreValue.TabIndex = 8;
@@ -144,7 +144,7 @@
             // 
             this.teamTwoScoreText.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.teamTwoScoreText.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.teamTwoScoreText.Location = new System.Drawing.Point(392, 292);
+            this.teamTwoScoreText.Location = new System.Drawing.Point(391, 295);
             this.teamTwoScoreText.Name = "teamTwoScoreText";
             this.teamTwoScoreText.Size = new System.Drawing.Size(100, 35);
             this.teamTwoScoreText.TabIndex = 11;
@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 354);
+            this.ClientSize = new System.Drawing.Size(666, 354);
             this.Controls.Add(this.scoreButton);
             this.Controls.Add(this.versusLabel);
             this.Controls.Add(this.teamTwoScoreText);
