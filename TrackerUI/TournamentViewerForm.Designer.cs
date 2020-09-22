@@ -35,6 +35,8 @@
             this.unplayedOnlyCheckBox = new System.Windows.Forms.CheckBox();
             this.matchupListBox = new System.Windows.Forms.ListBox();
             this.teramOneName = new System.Windows.Forms.Label();
+            this.teamOneScoreLabel = new System.Windows.Forms.Label();
+            this.teamOneScoreValue = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -105,13 +107,33 @@
             // teramOneName
             // 
             this.teramOneName.AutoSize = true;
-            this.teramOneName.Font = new System.Drawing.Font("Segoe UI", 20.25F);
+            this.teramOneName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.teramOneName.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.teramOneName.Location = new System.Drawing.Point(321, 144);
             this.teramOneName.Name = "teramOneName";
-            this.teramOneName.Size = new System.Drawing.Size(165, 37);
+            this.teramOneName.Size = new System.Drawing.Size(129, 30);
             this.teramOneName.TabIndex = 6;
             this.teramOneName.Text = "<team one>";
+            // 
+            // teamOneScoreLabel
+            // 
+            this.teamOneScoreLabel.AutoSize = true;
+            this.teamOneScoreLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.teamOneScoreLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.teamOneScoreLabel.Location = new System.Drawing.Point(321, 174);
+            this.teamOneScoreLabel.Name = "teamOneScoreLabel";
+            this.teamOneScoreLabel.Size = new System.Drawing.Size(64, 30);
+            this.teamOneScoreLabel.TabIndex = 7;
+            this.teamOneScoreLabel.Text = "Score";
+            // 
+            // teamOneScoreValue
+            // 
+            this.teamOneScoreValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.teamOneScoreValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.teamOneScoreValue.Location = new System.Drawing.Point(391, 171);
+            this.teamOneScoreValue.Name = "teamOneScoreValue";
+            this.teamOneScoreValue.Size = new System.Drawing.Size(100, 35);
+            this.teamOneScoreValue.TabIndex = 8;
             // 
             // TournamentViewerForm
             // 
@@ -119,6 +141,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 1038);
+            this.Controls.Add(this.teamOneScoreValue);
+            this.Controls.Add(this.teamOneScoreLabel);
             this.Controls.Add(this.teramOneName);
             this.Controls.Add(this.matchupListBox);
             this.Controls.Add(this.unplayedOnlyCheckBox);
@@ -144,6 +168,8 @@
         private System.Windows.Forms.CheckBox unplayedOnlyCheckBox;
         private System.Windows.Forms.ListBox matchupListBox;
         private System.Windows.Forms.Label teramOneName;
+        private System.Windows.Forms.Label teamOneScoreLabel;
+        private System.Windows.Forms.TextBox teamOneScoreValue;
     }
 }
 
