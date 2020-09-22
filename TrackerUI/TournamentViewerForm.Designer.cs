@@ -34,7 +34,7 @@
             this.roundDropDown = new System.Windows.Forms.ComboBox();
             this.unplayedOnlyCheckBox = new System.Windows.Forms.CheckBox();
             this.matchupListBox = new System.Windows.Forms.ListBox();
-
+            this.teramOneName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -102,7 +102,16 @@
             this.matchupListBox.Size = new System.Drawing.Size(293, 92);
             this.matchupListBox.TabIndex = 5;
             // 
-
+            // teramOneName
+            // 
+            this.teramOneName.AutoSize = true;
+            this.teramOneName.Font = new System.Drawing.Font("Segoe UI", 20.25F);
+            this.teramOneName.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.teramOneName.Location = new System.Drawing.Point(321, 144);
+            this.teramOneName.Name = "teramOneName";
+            this.teramOneName.Size = new System.Drawing.Size(165, 37);
+            this.teramOneName.TabIndex = 6;
+            this.teramOneName.Text = "<team one>";
             // 
             // TournamentViewerForm
             // 
@@ -110,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 1038);
-
+            this.Controls.Add(this.teramOneName);
             this.Controls.Add(this.matchupListBox);
             this.Controls.Add(this.unplayedOnlyCheckBox);
             this.Controls.Add(this.roundDropDown);
@@ -134,7 +143,7 @@
         private System.Windows.Forms.ComboBox roundDropDown;
         private System.Windows.Forms.CheckBox unplayedOnlyCheckBox;
         private System.Windows.Forms.ListBox matchupListBox;
-
+        private System.Windows.Forms.Label teramOneName;
     }
 }
 
