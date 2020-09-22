@@ -33,6 +33,8 @@
             this.roundLabel = new System.Windows.Forms.Label();
             this.roundDropDown = new System.Windows.Forms.ComboBox();
             this.unplayedOnlyCheckBox = new System.Windows.Forms.CheckBox();
+            this.matchupListBox = new System.Windows.Forms.ListBox();
+
             this.SuspendLayout();
             // 
             // headerLabel
@@ -90,12 +92,26 @@
             this.unplayedOnlyCheckBox.Text = "Unplayed Only";
             this.unplayedOnlyCheckBox.UseVisualStyleBackColor = true;
             // 
+            // matchupListBox
+            // 
+            this.matchupListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.matchupListBox.FormattingEnabled = true;
+            this.matchupListBox.ItemHeight = 30;
+            this.matchupListBox.Location = new System.Drawing.Point(22, 144);
+            this.matchupListBox.Name = "matchupListBox";
+            this.matchupListBox.Size = new System.Drawing.Size(293, 92);
+            this.matchupListBox.TabIndex = 5;
+            // 
+
+            // 
             // TournamentViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 1038);
+
+            this.Controls.Add(this.matchupListBox);
             this.Controls.Add(this.unplayedOnlyCheckBox);
             this.Controls.Add(this.roundDropDown);
             this.Controls.Add(this.roundLabel);
@@ -117,6 +133,8 @@
         private System.Windows.Forms.Label roundLabel;
         private System.Windows.Forms.ComboBox roundDropDown;
         private System.Windows.Forms.CheckBox unplayedOnlyCheckBox;
+        private System.Windows.Forms.ListBox matchupListBox;
+
     }
 }
 
