@@ -35,6 +35,7 @@
             this.entryFeeLabel = new System.Windows.Forms.Label();
             this.selectTeamDropDown = new System.Windows.Forms.ComboBox();
             this.selectTeamLabel = new System.Windows.Forms.Label();
+            this.createNewTeam = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -109,12 +110,23 @@
             this.selectTeamLabel.TabIndex = 13;
             this.selectTeamLabel.Text = "Select Team";
             // 
+            // createNewTeam
+            // 
+            this.createNewTeam.AutoSize = true;
+            this.createNewTeam.Location = new System.Drawing.Point(215, 205);
+            this.createNewTeam.Name = "createNewTeam";
+            this.createNewTeam.Size = new System.Drawing.Size(114, 30);
+            this.createNewTeam.TabIndex = 15;
+            this.createNewTeam.TabStop = true;
+            this.createNewTeam.Text = "create new";
+            // 
             // CreateTournamentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 1038);
+            this.Controls.Add(this.createNewTeam);
             this.Controls.Add(this.selectTeamDropDown);
             this.Controls.Add(this.selectTeamLabel);
             this.Controls.Add(this.entryFeeValue);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.Label entryFeeLabel;
         private System.Windows.Forms.ComboBox selectTeamDropDown;
         private System.Windows.Forms.Label selectTeamLabel;
+        private System.Windows.Forms.LinkLabel createNewTeam;
     }
 }
