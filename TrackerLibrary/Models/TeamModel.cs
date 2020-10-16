@@ -35,7 +35,7 @@ using System.Threading.Tasks;
 //- Texting
 
 
-namespace TrackerLibrary
+namespace TrackerLibrary.Models
 {
     public class TeamModel
     {
