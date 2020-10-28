@@ -19,7 +19,18 @@ namespace TrackerUI
             InitializeComponent();
         }
 
-        private void createTeamButton_Click(object sender, EventArgs e)
+ 
+
+        private bool ValidateForm()
+        {
+            if (firstNameValue.Text.Length == 0) return false;
+            if (lastNameValue.Text.Length == 0) return false;
+            if (emailValue.Text.Length == 0) return false;
+            if (cellPhoneValue.Text.Length ==0) return false;
+            return true;
+        }
+
+        private void createMemberButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
@@ -30,21 +41,15 @@ namespace TrackerUI
                 p.CellPhoneNumber = cellPhoneValue.Text;
 
                 GlobalConfig.Connection.CreatePerson(p);
-
+                firstNameValue.Text = "";
+                lastNameValue.Text = "";
+                emailValue.Text = "";
+                cellPhoneValue.Text = "";
             }
             else
             {
                 MessageBox.Show("You need to fill in all of the fields");
             }
-        }
-
-        private bool ValidateForm()
-        {
-            if (firstNameValue.Text.Length == 0) return false;
-            if (lastNameValue.Text.Length == 0) return false;
-            if (emailValue.Text.Length == 0) return false;
-            if (cellPhoneValue.Text.Length ==0) return false;
-            return true;
         }
     }
 }
