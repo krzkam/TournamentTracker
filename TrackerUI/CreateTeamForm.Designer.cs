@@ -40,9 +40,9 @@
             this.cellPhoneLabel = new System.Windows.Forms.Label();
             this.emailValue = new System.Windows.Forms.TextBox();
             this.emailLabel = new System.Windows.Forms.Label();
-            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.lastNameValue = new System.Windows.Forms.TextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
-            this.teamOneScoreValue = new System.Windows.Forms.TextBox();
+            this.firstNameValue = new System.Windows.Forms.TextBox();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.teamMembersListBox = new System.Windows.Forms.ListBox();
             this.deteleSelectedMemberButton = new System.Windows.Forms.Button();
@@ -123,9 +123,9 @@
             this.newMemberGroupBox.Controls.Add(this.cellPhoneLabel);
             this.newMemberGroupBox.Controls.Add(this.emailValue);
             this.newMemberGroupBox.Controls.Add(this.emailLabel);
-            this.newMemberGroupBox.Controls.Add(this.lastNameTextBox);
+            this.newMemberGroupBox.Controls.Add(this.lastNameValue);
             this.newMemberGroupBox.Controls.Add(this.lastNameLabel);
-            this.newMemberGroupBox.Controls.Add(this.teamOneScoreValue);
+            this.newMemberGroupBox.Controls.Add(this.firstNameValue);
             this.newMemberGroupBox.Controls.Add(this.firstNameLabel);
             this.newMemberGroupBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.newMemberGroupBox.ForeColor = System.Drawing.Color.DeepSkyBlue;
@@ -191,14 +191,14 @@
             this.emailLabel.TabIndex = 25;
             this.emailLabel.Text = "Email";
             // 
-            // lastNameTextBox
+            // lastNameValue
             // 
-            this.lastNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lastNameTextBox.Location = new System.Drawing.Point(155, 86);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(200, 35);
-            this.lastNameTextBox.TabIndex = 24;
+            this.lastNameValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lastNameValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lastNameValue.Location = new System.Drawing.Point(155, 86);
+            this.lastNameValue.Name = "lastNameValue";
+            this.lastNameValue.Size = new System.Drawing.Size(200, 35);
+            this.lastNameValue.TabIndex = 24;
             // 
             // lastNameLabel
             // 
@@ -211,14 +211,14 @@
             this.lastNameLabel.TabIndex = 23;
             this.lastNameLabel.Text = "Last Name";
             // 
-            // teamOneScoreValue
+            // firstNameValue
             // 
-            this.teamOneScoreValue.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.teamOneScoreValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.teamOneScoreValue.Location = new System.Drawing.Point(155, 45);
-            this.teamOneScoreValue.Name = "teamOneScoreValue";
-            this.teamOneScoreValue.Size = new System.Drawing.Size(200, 35);
-            this.teamOneScoreValue.TabIndex = 22;
+            this.firstNameValue.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.firstNameValue.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.firstNameValue.Location = new System.Drawing.Point(155, 45);
+            this.firstNameValue.Name = "firstNameValue";
+            this.firstNameValue.Size = new System.Drawing.Size(200, 35);
+            this.firstNameValue.TabIndex = 22;
             // 
             // firstNameLabel
             // 
@@ -270,6 +270,7 @@
             this.createTeamButton.TabIndex = 25;
             this.createTeamButton.Text = "Create Team";
             this.createTeamButton.UseVisualStyleBackColor = true;
+            this.createTeamButton.Click += new System.EventHandler(this.createTeamButton_Click);
             // 
             // CreateTeamForm
             // 
@@ -308,13 +309,13 @@
         private System.Windows.Forms.ComboBox selectTeamMemberDropDown;
         private System.Windows.Forms.Label selectTeamMemberLabel;
         private System.Windows.Forms.GroupBox newMemberGroupBox;
-        private System.Windows.Forms.TextBox teamOneScoreValue;
+        private System.Windows.Forms.TextBox firstNameValue;
         private System.Windows.Forms.Label firstNameLabel;
         private System.Windows.Forms.TextBox cellPhoneValue;
         private System.Windows.Forms.Label cellPhoneLabel;
         private System.Windows.Forms.TextBox emailValue;
         private System.Windows.Forms.Label emailLabel;
-        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.TextBox lastNameValue;
         private System.Windows.Forms.Label lastNameLabel;
         private System.Windows.Forms.Button createMemberButton;
         private System.Windows.Forms.ListBox teamMembersListBox;
