@@ -36,10 +36,13 @@ namespace TrackerUI
 
                 GlobalConfig.Connection.CreatePrize(model);
 
-                placeNameValue.Text = "";
-                placeNumberValue.Text = "";
-                prizeAmountValue.Text = "0";
-                pricePercentageValue.Text = "0";
+                callingForm.PrizeComplete(model);
+
+                this.Close();
+                //placeNameValue.Text = "";
+                //placeNumberValue.Text = "";
+                //prizeAmountValue.Text = "0";
+                //pricePercentageValue.Text = "0";
             }
             else
             {
