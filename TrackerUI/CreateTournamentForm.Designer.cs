@@ -159,6 +159,7 @@
             this.createPriceButton.TabIndex = 17;
             this.createPriceButton.Text = "Create Price";
             this.createPriceButton.UseVisualStyleBackColor = true;
+            this.createPriceButton.Click += new System.EventHandler(this.createPriceButton_Click);
             // 
             // tournamentTeamsListBox
             // 
