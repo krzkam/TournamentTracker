@@ -76,13 +76,23 @@ namespace TrackerLibrary.DataAccess
             return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
         }
 
-        public TournamentModel CreateTournament(TournamentModel model)
+        public void CreateTournament(TournamentModel model)
         {
             List<TournamentModel> tournaments = TournamnetFile
                 .FullFilePath()
                 .LoadFile()
                 .ConvertToTournamentModels(TeamFile, PeopleFile, PrizesFile);
-            
+
+            int currentId = 1;
+            if (tournaments.Count > 0)
+            {
+                currentId = tournaments.OrderByDescending(x => x.Id).First().Id + 1; //Find the max ID
+            }
+
+            model.Id = currentId;
+
+            tournaments.Add(model);
+            tournaments.SaveToTournamentFie(TournamnetFile);
         }
     }
 }
