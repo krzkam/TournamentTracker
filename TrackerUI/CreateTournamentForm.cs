@@ -130,10 +130,14 @@ namespace TrackerUI
             tm.Prizes = selectedPrizes;
             tm.EnteredTeams = selectedTeams;
 
-            //tm.EntryFee = decimal.TryParse(entryFeeValue.Text);
+            //Wire up our matchups
+
             //Create Tournaments Entry
             //Create all of the prizes entries
             //Create all of team entries
+            GlobalConfig.Connection.CreateTournament(tm);
+            
+
 
 
         }
