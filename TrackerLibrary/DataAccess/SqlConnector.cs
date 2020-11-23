@@ -149,7 +149,7 @@ namespace TrackerLibrary.DataAccess
                     //p.Add("@TeamId", tm.Id);
                     //p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                    //connection.Execute("dbo.spTournamentEntries_Insert", p, commandType: CommandType.StoredProcedure);
+                    //connection.Execute("dbo.spTournamentEntries_Insert", p, commandType: CommandType.StoredProcedure); 
                 }
             }
         }
