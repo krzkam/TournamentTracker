@@ -133,12 +133,6 @@ namespace TrackerUI
             //TODO -Wire up our matchups
             TournamentLogic.CreateRounds(tm);
 
-            //Order our list randomly
-            //Check if it is big enough - if not, add in byes 
-            //Create our first round of matchups
-            //Create every round after that
-            //
-
             //Create Tournaments Entry
             //Create all of the prizes entries
             //Create all of team entries
