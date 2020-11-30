@@ -120,15 +120,16 @@ namespace TrackerLibrary.DataAccess
         }
         private void SaveTournamentEntries(IDbConnection connection, TournamentModel model)
         {
-            var p = new DynamicParameters();
+ 
             foreach (TeamModel tm in model.EnteredTeams)
             {
-                p = new DynamicParameters();
+                var p = new DynamicParameters();
                 p.Add("@TournamentId", model.Id);
                 p.Add("@TeamId", tm.Id);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spTournamentEntries_Insert", p, commandType: CommandType.StoredProcedure);
+                
             }
         }
 

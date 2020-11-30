@@ -14,6 +14,8 @@ namespace TrackerLibrary.DataAccess
         private const string PeopleFile = "PersonModels.csv";
         private const string TeamFile = "TeamModels.csv";
         private const string TournamnetFile = "TournamnetModels.csv";
+        private const string MatchupFile = "MatchupModels.csv";
+        private const string MatchupEntrieFile = "MatchupEntryModel.csv";
 
         public PersonModel CreatePerson(PersonModel model)
         {
@@ -29,7 +31,6 @@ namespace TrackerLibrary.DataAccess
             people.SaveToPeopleFile(PeopleFile);
             return model;
         }
-
  
         public PrizeModel CreatePrize(PrizeModel model)
         {
@@ -64,8 +65,6 @@ namespace TrackerLibrary.DataAccess
 
         }
 
-
-
         public List<PersonModel> GetPerson_All()
         {
             return PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
@@ -91,6 +90,7 @@ namespace TrackerLibrary.DataAccess
 
             model.Id = currentId;
 
+            //tournaments.SaveRoundsToFile(model, MatchupFile, MatchupEntryFile);
             tournaments.Add(model);
             tournaments.SaveToTournamentFie(TournamnetFile);
         }

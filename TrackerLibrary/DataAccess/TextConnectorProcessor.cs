@@ -170,6 +170,14 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
+        public static void SaveRoundsToFile(this TournamentModel model, string MatchupFile, string MatchupEntryFile)
+        {
+            // Loop through each Round
+            // Loop through each Matchup
+            // Get the id for the new matchup and save record
+            // Loop through each Entry, get the id, and save it
+        }
+
         public static void SaveToTournamentFie(this List<TournamentModel> models, string fileName)
         {
             List<string> lines = new List<string>();
@@ -241,6 +249,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             }
             return output.Substring(0, output.Length - 1);
         } 
+
         private static string ConvertPeopleListToString(List<PersonModel> people)
         {
             string output = "";
