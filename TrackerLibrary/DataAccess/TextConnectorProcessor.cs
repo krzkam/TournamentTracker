@@ -189,15 +189,60 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             }
         }
 
+        public static List<MatchupEntryModel> ConvertToMatchupEntryModels(this List<string> lines)
+        {
+            //List<PersonModel> output = new List<PersonModel>();
+            //foreach (string line in lines)
+            //{
+            //    string[] cols = line.Split(',');
+            //    PersonModel p = new PersonModel();
+            //    p.Id = int.Parse(cols[0]);
+            //    p.FirstName = cols[1];
+            //    p.LastName = cols[2];
+            //    p.EmailAdress = cols[3];
+            //    p.CellPhoneNumber = cols[4];
+            //    output.Add(p);
+            //}
+            //return output;
+
+            //id = 0, TeamCompeting = 1, Score = 2, ParentMatchup = 3
+            List<MatchupEntryModel> output = new List<MatchupEntryModel>();
+            foreach (string  line in lines)
+            {
+                string[] cols = line.Split(',');
+
+                MatchupEntryModel me = new MatchupEntryModel();
+                me.Id = int.Parse(cols[0]);
+                me.TeamCompeting = LookupTeamById(int.Parse(cols[1]));
+                me.Score = double.Parse(cols[2]);
+                me.ParentMatchup = LookupMatchupById(int.Parse(cols[3]));
+            }
+            return output;
+        }
+
         private static List<MatchupEntryModel> ConvertStringToMatchupEntryModels(string input)
         {
-            throw new NotFiniteNumberException();
+            string[] ids = input.Split('|');
+            List<MatchupEntryModel> output = new List<MatchupEntryModel>();
+            List<MatchupEntryModel> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile().ConvertToMatchupEntryModels();
+
+            foreach (string id in ids)
+            {
+                output.Add(entries.Where(x=>x.Id==int.Parse(id)).First());
+            }
+            return output;
         }
 
         private static TeamModel LookupTeamById(int id)
         {
             List<TeamModel> teams = GlobalConfig.TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(GlobalConfig.PeopleFile);
-            throw new NotFiniteNumberException();
+            return teams.Where(x => x.Id == id).First();
+        }
+
+        private static MatchupModel LookupMatchupById(int id)
+        {
+            List<MatchupModel> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile().ConvertToMatchupModels();
+            return matchups.Where(x => x.Id==id).First();
         }
 
         public static List<MatchupModel> ConvertToMatchupModels(this List<string> lines)
