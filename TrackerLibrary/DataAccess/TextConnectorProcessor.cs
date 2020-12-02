@@ -322,7 +322,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 {
                     winner = m.Winner.Id.ToString();
                 }
-                lines.Add($"{m.Id},{ "" },{winner},{m.MatchupRound}");
+                lines.Add($"{m.Id},{ "" },{winner},{m.MatchupRound}"); 
             }
             File.WriteAllLines(GlobalConfig.MatchupFile.FullFilePath(), lines);
 
