@@ -80,7 +80,7 @@ namespace TrackerLibrary
             int totalTeams = 0;
             //Math.Pow(2, rounds);
 
-            for (int i = 0; i <= rounds; i++)
+            for (int i = 1; i <= rounds; i++)
             {
                 totalTeams *= 2; 
             }
@@ -92,7 +92,7 @@ namespace TrackerLibrary
 
         private static int FindNumberOfRounds(int teamCount)
         {
-            int output = 0;
+            int output = 1;
             int val = 2;
             
             while (val < teamCount)
