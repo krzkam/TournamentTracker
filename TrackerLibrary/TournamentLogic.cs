@@ -58,15 +58,15 @@ namespace TrackerLibrary
             foreach (TeamModel team in teams)
             {
                 curr.Entries.Add(new MatchupEntryModel { TeamCompeting = team });
-                if (byes>0||curr.Entries.Count > 1)
+                if (byes > 0 || curr.Entries.Count > 1)
                 {
                     curr.MatchupRound = 1;
                     output.Add(curr);
                     curr = new MatchupModel();
-                    
-                    if (byes > 0)
+
+                    if (byes >= 0)
                     {
-                        byes -= 1; 
+                        byes -= 1;
                     }
                 }
             }
@@ -77,12 +77,12 @@ namespace TrackerLibrary
         private static int NumberOfBues(int rounds, int numberOfTeams)
         {
             int output = 0;
-            int totalTeams = 0;
+            int totalTeams = 1;
             //Math.Pow(2, rounds);
 
             for (int i = 1; i <= rounds; i++)
             {
-                totalTeams *= 2; 
+                totalTeams *= 2;
             }
 
             output = totalTeams - numberOfTeams;
@@ -94,7 +94,7 @@ namespace TrackerLibrary
         {
             int output = 1;
             int val = 2;
-            
+
             while (val < teamCount)
             {
                 output += 1;
