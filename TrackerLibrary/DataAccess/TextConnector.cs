@@ -28,7 +28,7 @@ namespace TrackerLibrary.DataAccess
             }
             model.Id = currentId;
             people.Add(model);
-            people.SaveToPeopleFile(PeopleFile);
+            people.SaveToPeopleFile();
             return model;
         }
  
@@ -45,13 +45,13 @@ namespace TrackerLibrary.DataAccess
             prizes.Add(model); //Add the new record with the new ID
             //Convert the prizes to list<string>
             //Save the list<string> to the text file
-            prizes.SaveToPrizeFile(PrizesFile);
+            prizes.SaveToPrizeFile();
             return model;
         }
 
         public TeamModel CreateTeam(TeamModel model)
         {
-            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels();
             int currentId = 1;
             if (teams.Count > 0)
             {
@@ -60,7 +60,7 @@ namespace TrackerLibrary.DataAccess
             model.Id = currentId;
             teams.Add(model);
 
-            teams.SaveToTeamFile(TeamFile);
+            teams.SaveToTeamFile();
             return model;
 
         }
@@ -72,7 +72,7 @@ namespace TrackerLibrary.DataAccess
 
         public List<TeamModel> GetTeam_All()
         {
-            return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+            return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels();
         }
 
         public void CreateTournament(TournamentModel model)
@@ -80,7 +80,7 @@ namespace TrackerLibrary.DataAccess
             List<TournamentModel> tournaments = TournamnetFile
                 .FullFilePath()
                 .LoadFile()
-                .ConvertToTournamentModels(TeamFile, PeopleFile, PrizesFile);
+                .ConvertToTournamentModels();
 
             int currentId = 1;
             if (tournaments.Count > 0)
@@ -90,11 +90,11 @@ namespace TrackerLibrary.DataAccess
 
             model.Id = currentId;
 
-            model.SaveRoundsToFile(MatchupFile, MatchupEntryFile);
+            model.SaveRoundsToFile();
 
             tournaments.Add(model);
 
-            tournaments.SaveToTournamentFie(TournamnetFile);
+            tournaments.SaveToTournamentFie();
         }
     }
 }
