@@ -14,16 +14,24 @@ namespace TrackerUI
     public partial class TournamentViewerForm : Form
     {
         private TournamentModel tournament;
-        List<int> rounds = new List<int>();
-        List<MatchupModel> selectedMatchups = new List<MatchupModel>();
+        BindingList<int> rounds = new BindingList<int>();
+        BindingList<MatchupModel> selectedMatchups = new BindingList<MatchupModel>();
+
+        //BindingSource roundsBinding = new BindingSource();
+        //BindingSource matchupBinding = new BindingSource();
+
 
         public TournamentViewerForm(TournamentModel tournamentModel)
         {
             InitializeComponent();
 
             tournament = tournamentModel;
-            LoadRounds();
+
+            WireUpLists();
+
             LoadFormData();
+            LoadRounds();
+
             
         }
 
@@ -33,22 +41,19 @@ namespace TrackerUI
 
         }
 
-        private void WireUpRoudnsLists()
+        private void WireUpLists()
         {
-            roundDropDown.DataSource = null;
+            //roundDropDown.DataSource = null;
             roundDropDown.DataSource = rounds;
-        }
-
-        private void WireUpMatchupsLists()
-        {
-            matchupListBox.DataSource = null;
             matchupListBox.DataSource = selectedMatchups;
             matchupListBox.DisplayMember = "DisplayName";
         }
 
+
         private void LoadRounds()
         {
-            rounds = new List<int>();
+            //rounds = new BindingList<int>();
+            rounds.Clear();
             rounds.Add(1);
             int currRound = 1;
 
@@ -62,25 +67,85 @@ namespace TrackerUI
 
                 }
             }
-            WireUpRoudnsLists();
+            //roundsBinding.ResetBindings(false);
+            //WireUpRoudnsLists();
+            LoadMatchups(1);
         }
 
         private void roundDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMatchups();
+            LoadMatchups((int)roundDropDown.SelectedItem);
         }
 
-        private void LoadMatchups()
+        private void LoadMatchups(int round)
         {
-            int round = (int)roundDropDown.SelectedItem;
+ 
             foreach (List<MatchupModel> matchups in tournament.Rounds)
             {
                 if (matchups.First().MatchupRound == round)
                 {
-                    selectedMatchups = matchups;
+                    selectedMatchups.Clear();
+                    foreach (MatchupModel m in matchups)
+                    {
+                        selectedMatchups.Add(m);
+                    }
+                    //selectedMatchups = new BindingList<MatchupModel>(matchups);
                 }
             }
-            WireUpMatchupsLists();
+            //matchupBinding.ResetBindings(false);
+            //WireUpMatchupsLists();
+            LoadMatchup(selectedMatchups.First());
+        }
+
+        private void LoadMatchup(MatchupModel m)
+        {
+
+            try
+            {
+                for (int i = 0; i < m.Entries.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        if (m.Entries[0].TeamCompeting != null)
+                        {
+                            teamOneName.Text = m.Entries[0].TeamCompeting.TeamName;
+                            teamOneScoreValue.Text = m.Entries[0].Score.ToString();
+
+                            teamTwoName.Text = "<bye>";
+                            teamTwoScoreValue.Text = "0";
+                        }
+                        else
+                        {
+                            teamOneName.Text = "Not Yet Set";
+                            teamOneScoreValue.Text = "";
+
+                        }
+                    }
+                    if (i == 1)
+                    {
+                        if (m.Entries[1].TeamCompeting != null)
+                        {
+                            teamTwoName.Text = m.Entries[1].TeamCompeting.TeamName;
+                            teamTwoScoreValue.Text = m.Entries[1].Score.ToString();
+                        }
+                        else
+                        {
+                            teamTwoName.Text = "Not Yet Set";
+                            teamTwoScoreValue.Text = "";
+
+                        }
+                    }
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                //TODO
+            }
+        }
+
+        private void matchupListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadMatchup((MatchupModel)matchupListBox.SelectedItem);
         }
     }
 }
