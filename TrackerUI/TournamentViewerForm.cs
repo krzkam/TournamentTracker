@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrackerLibrary;
 using TrackerLibrary.Models;
 
 namespace TrackerUI
@@ -230,6 +231,8 @@ namespace TrackerUI
                     MessageBox.Show("I do not handle tie games.");
                 }
                 LoadMatchups((int)roundDropDown.SelectedItem);
+
+                GlobalConfig.Connection.UpdateMatchup(m);
             }
             catch (System.NullReferenceException)
             {
