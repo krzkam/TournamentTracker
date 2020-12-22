@@ -15,6 +15,7 @@ namespace TrackerUI
     {
         private TournamentModel tournament;
         List<int> rounds = new List<int>();
+        List<MatchupModel> selectedMatchups = new List<MatchupModel>();
 
         public TournamentViewerForm(TournamentModel tournamentModel)
         {
@@ -32,10 +33,17 @@ namespace TrackerUI
 
         }
 
-        private void WireUpLists()
+        private void WireUpRoudnsLists()
         {
             roundDropDown.DataSource = null;
             roundDropDown.DataSource = rounds;
+        }
+
+        private void WireUpMatchupsLists()
+        {
+            matchupListBox.DataSource = null;
+            matchupListBox.DataSource = selectedMatchups;
+            matchupListBox.DisplayMember = "DisplayName";
         }
 
         private void LoadRounds()
@@ -54,8 +62,25 @@ namespace TrackerUI
 
                 }
             }
-            WireUpLists();
+            WireUpRoudnsLists();
         }
- 
+
+        private void roundDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadMatchups();
+        }
+
+        private void LoadMatchups()
+        {
+            int round = (int)roundDropDown.SelectedItem;
+            foreach (List<MatchupModel> matchups in tournament.Rounds)
+            {
+                if (matchups.First().MatchupRound == round)
+                {
+                    selectedMatchups = matchups;
+                }
+            }
+            WireUpMatchupsLists();
+        }
     }
 }
