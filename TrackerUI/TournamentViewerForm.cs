@@ -229,6 +229,7 @@ namespace TrackerUI
                 {
                     MessageBox.Show("I do not handle tie games.");
                 }
+                LoadMatchups((int)roundDropDown.SelectedItem);
             }
             catch (System.NullReferenceException)
             {
